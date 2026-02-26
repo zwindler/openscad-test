@@ -5,7 +5,7 @@
 - **OS**: Bazzite (Fedora Atomic/immutable desktop)
 - **Editor**: VS Code terminal
 - **Package management**: Flatpak is the primary method. Installing via rpm-ostree is possible but discouraged.
-- **OpenSCAD status**: NOT yet installed. Recommended install method: `flatpak install flathub org.openscad.OpenSCAD`
+- **OpenSCAD status**: Installed via Flatpak (`org.openscad.OpenSCAD 2021.01`)
 - **OpenSCAD CLI via Flatpak**: `flatpak run org.openscad.OpenSCAD [args]`
 
 ## Goal
@@ -56,3 +56,4 @@ flatpak-spawn --host flatpak run org.openscad.OpenSCAD -o model.3mf model.scad
 | # | Folder | Description | Status |
 |---|--------|-------------|--------|
 | 1 | test-01-parametric-box | Hollow box with configurable dimensions and wall thickness | Done |
+| 2 | test-02-tintin-rocket | Tintin-style moon rocket with ogive nose, fins, nozzle, bands, portholes | Done |
