@@ -42,7 +42,7 @@ Because VS Code runs as a Flatpak, all host commands must be prefixed with `flat
 
 ```bash
 # Render to PNG preview
-flatpak-spawn --host flatpak run org.openscad.OpenSCAD -o preview.png --camera=0,0,0,60,0,30,200 model.scad
+flatpak-spawn --host flatpak run --nosocket=wayland --env=DISPLAY=:0 org.openscad.OpenSCAD -o preview.png --camera=0,0,0,60,0,30,200 model.scad
 
 # Export to STL
 flatpak-spawn --host flatpak run org.openscad.OpenSCAD -o model.stl model.scad
@@ -50,6 +50,8 @@ flatpak-spawn --host flatpak run org.openscad.OpenSCAD -o model.stl model.scad
 # Export to 3MF
 flatpak-spawn --host flatpak run org.openscad.OpenSCAD -o model.3mf model.scad
 ```
+
+**Note on PNG rendering**: On Wayland (Bazzite), `--nosocket=wayland --env=DISPLAY=:0` is required to force XWayland fallback. Without this, OpenSCAD's offscreen OpenGL rendering fails.
 
 ## Tests Log
 
